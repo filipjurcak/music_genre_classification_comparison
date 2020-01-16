@@ -36,7 +36,7 @@
 | SVM            | 64%   | 46.8%     |
 | Random Forrest | 60%   | 45.8%     |
 | Neural Network | 63%   | 42%       |
-| CNN            | 73.3% |  %        |
+| CNN            | 73.3% | 56.7%     |
 
 As you can see, there is quite a drop-off in accuracy when a model is trained on a bigger dataset than it was initially
 optimized for. This indicates that the original dataset wasn't large enough to account for the real error of the models. 
