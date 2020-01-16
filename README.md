@@ -21,7 +21,7 @@
  I chose 5 different models for classification, namely:
  * K-Nearest Neighbors (K-NN)
  * SVM
- * Random Forrest ()
+ * Random Forest
  * Neural Network (NN)
  * Convolutional Neural Network (CNN)
  
@@ -34,7 +34,7 @@
 |:--------------:|:-----:| :--------:|
 | K-NN           | 60%   | 45.7%     |
 | SVM            | 64%   | 46.8%     |
-| Random Forrest | 60%   | 45.8%     |
+| Random Forest | 60%   | 45.8%     |
 | Neural Network | 63%   | 42%       |
 | CNN            | 73.3% | 56.7%     |
 
