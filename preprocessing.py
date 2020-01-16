@@ -9,7 +9,7 @@ warnings.filterwarnings('ignore')
 
 
 def save_features_csv(header, genres, dataset, csv_file, normalized_csv_file):
-    with open(fma_small_csv_file, 'w', newline='') as file:
+    with open(csv_file, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(header)
 
