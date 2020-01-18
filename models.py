@@ -48,8 +48,8 @@ if __name__ == "__main__":
     # data = np.array(shuffle(pd.read_csv('fma_small/normalized_data.csv')))
 
     # melspectograms for fma_small dataset
-    # X = np.load('x_fma_small_npy.npy')
-    # y = np.load('y_fma_small_npy.npy')
+    # X_cnn = np.load('x_fma_small.npy')
+    # y_cnn = np.load('y_fma_small.npy')
 
     split = int(data.shape[0] * test_size)
     test = data[:split]

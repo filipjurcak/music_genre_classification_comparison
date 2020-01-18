@@ -111,30 +111,30 @@ def create_melspectogram_data(genres, source_dir, song_samples):
 if __name__ == "__main__":
     samples = 660000
 
-    # header = ['filename', 'chroma_stft', 'spectral_centroid', 'spectral_bandwidth', 'rolloff', 'zero_crossing_rate']
-    # for i in range(1, 21):
-    #     header.append('mfcc{}'.format(i))
-    # header.append('label')
-    #
-    # # gtzan csv data
-    # gtzan_csv_file = 'gtzan/data.csv'
-    # normalized_gtzan_csv_file = 'gtzan/normalized_data.csv'
-    # gtzan_genres = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']
-    # save_features_csv(header, gtzan_genres, 'gtzan', gtzan_csv_file, normalized_gtzan_csv_file)
-    #
-    # # gtzan melspectograms
-    # gtzan_source_dir = 'gtzan/genres/'
-    # gtzan_genres_dict = {'metal': 0, 'disco': 1, 'classical': 2, 'hiphop': 3, 'jazz': 4,
-    #                      'country': 5, 'pop': 6, 'blues': 7, 'reggae': 8, 'rock': 9}
-    # gtzan_melspectogram, gtzan_targets = create_melspectogram_data(gtzan_genres_dict, gtzan_source_dir, samples)
-    # np.save('x_gtzan_npy.npy', gtzan_melspectogram)
-    # np.save('y_gtzan_npy.npy', gtzan_targets)
-    #
-    # # fma_small csv data
-    # fma_small_csv_file = 'fma_small/data.csv'
-    # normalized_fma_small_csv_file = 'fma_small/normalized_data.csv'
-    # fma_small_genres = ['electronic', 'experimental', 'folk', 'hip-hop', 'instrumental', 'international', 'pop', 'rock']
-    # save_features_csv(header, fma_small_genres, 'fma_small', fma_small_csv_file, normalized_fma_small_csv_file)
+    header = ['filename', 'chroma_stft', 'spectral_centroid', 'spectral_bandwidth', 'rolloff', 'zero_crossing_rate']
+    for i in range(1, 21):
+        header.append('mfcc{}'.format(i))
+    header.append('label')
+
+    # gtzan csv data
+    gtzan_csv_file = 'gtzan/data.csv'
+    normalized_gtzan_csv_file = 'gtzan/normalized_data.csv'
+    gtzan_genres = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']
+    save_features_csv(header, gtzan_genres, 'gtzan', gtzan_csv_file, normalized_gtzan_csv_file)
+
+    # gtzan melspectograms
+    gtzan_source_dir = 'gtzan/genres/'
+    gtzan_genres_dict = {'metal': 0, 'disco': 1, 'classical': 2, 'hiphop': 3, 'jazz': 4,
+                         'country': 5, 'pop': 6, 'blues': 7, 'reggae': 8, 'rock': 9}
+    gtzan_melspectogram, gtzan_targets = create_melspectogram_data(gtzan_genres_dict, gtzan_source_dir, samples)
+    np.save('x_gtzan_npy.npy', gtzan_melspectogram)
+    np.save('y_gtzan_npy.npy', gtzan_targets)
+
+    # fma_small csv data
+    fma_small_csv_file = 'fma_small/data.csv'
+    normalized_fma_small_csv_file = 'fma_small/normalized_data.csv'
+    fma_small_genres = ['electronic', 'experimental', 'folk', 'hip-hop', 'instrumental', 'international', 'pop', 'rock']
+    save_features_csv(header, fma_small_genres, 'fma_small', fma_small_csv_file, normalized_fma_small_csv_file)
 
     # fma_small melspectograms
     fma_small_source_dir = 'fma_small/genres/'
