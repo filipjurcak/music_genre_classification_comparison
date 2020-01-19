@@ -32,24 +32,14 @@ def fit_and_print_results(model, x_train, y_train, x_test, y_test, y_test_label,
 
 
 if __name__ == "__main__":
+    gtzan = True  # change to false if you want to train on the bigger dataset
     test_size = 0.2
     k = 7  # for k-NN
 
-    # for gtzan dataset
-    data = np.array(shuffle(pd.read_csv('gtzan/data.csv')))
-    # data = np.array(shuffle(pd.read_csv('gtzan/normalized_data.csv')))
-
-    # melspectograms for gtzan dataset
-    X_cnn = np.load('x_gtzan_npy.npy')
-    y_cnn = np.load('y_gtzan_npy.npy')
-
-    # for fma small dataset
-    # data = np.array(shuffle(pd.read_csv('fma_small/data.csv')))
-    # data = np.array(shuffle(pd.read_csv('fma_small/normalized_data.csv')))
-
-    # melspectograms for fma_small dataset
-    # X_cnn = np.load('x_fma_small.npy')
-    # y_cnn = np.load('y_fma_small.npy')
+    data = np.array(shuffle(pd.read_csv('gtzan/data.csv' if gtzan else 'fma_small/data.csv')))
+    # data = np.array(shuffle(pd.read_csv('gtzan/normalized_data.csv' if gtzan else 'fma_small/normalized_data.csv')))
+    X_cnn = np.load('x_gtzan_npy.npy' if gtzan else 'x_fma_small.npy')
+    y_cnn = np.load('y_gtzan_npy.npy' if gtzan else 'y_fma_small.npy')
 
     split = int(data.shape[0] * test_size)
     test = data[:split]
@@ -135,7 +125,7 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = train_test_split(X_cnn, y_cnn, test_size=0.2, random_state=42, stratify=y_cnn)
 
     input_shape = X_train[0].shape
-    num_genres = 10
+    num_genres = 10 if gtzan else 8
 
     cnn = Sequential()
     # Conv Block 1
